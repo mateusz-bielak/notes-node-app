@@ -23,9 +23,10 @@ const addNote = (title, body) => {
 
     const isNoteDuplicate = notes.filter(note => note.title === title);
 
-    isNoteDuplicate.length > 0
-        ? console.log('That note already exist!')
-        : saveNotes([...notes, newNote]);
+    if (isNoteDuplicate.length === 0) {
+        saveNotes([...notes, newNote]);
+        return newNote;
+    }
 };
 
 const getAll = () => {
