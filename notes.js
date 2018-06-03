@@ -38,7 +38,15 @@ const readNote = title => {
 };
 
 const removeNote = title => {
-    console.log('Removing note', title);
+    const notes = fetchNotes();
+    const noteToRemove = notes.filter(note => note.title === title);
+
+    if (noteToRemove.length === 1) {
+        const remainingNotes = notes.filter(note => note.title !== title);
+
+        saveNotes(remainingNotes);
+        return noteToRemove[0];
+    }
 };
 
 module.exports = {

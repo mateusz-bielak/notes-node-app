@@ -11,6 +11,7 @@
         "arrow-parens": [2, "as-needed"],
         "max-len": [0, { "code": 80 }],
         "no-shadow": 2,
+        "quotes": [2, "single", { "avoidEscape": true }],
 
         "comma-dangle": 0,
         "eol-last": 0,
