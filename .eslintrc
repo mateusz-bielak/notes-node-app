@@ -1,0 +1,16 @@
+{
+    "extends": ["eslint:recommended", "google"],
+    "parserOptions": {
+        "ecmaVersion": 9
+    },
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "rules": {
+        "max-len": [2, { "code": 120 }],
+        "semi": 0,
+        "object-curly-spacing": 0,
+        "no-console": 0
+    }
+}
