@@ -6,6 +6,11 @@ const argv = yargs.argv;
 const command = argv._[0];
 console.log('Yarg', argv);
 
+const printNote = note => {
+    console.log(`Note title: ${note.title}`);
+    console.log(`Note body: ${note.body}`);
+};
+
 if (command === 'add') {
     const note = notes.addNote(argv.title, argv.body);
     note
@@ -14,7 +19,13 @@ if (command === 'add') {
 } else if (command === 'list') {
     notes.getAll();
 } else if (command === 'read') {
-    notes.readNote(argv.title);
+    const note = notes.readNote(argv.title);
+
+    if (!note) {
+        return console.log('Note not found!');
+    }
+
+    printNote(note);
 } else if (command === 'remove') {
     const note = notes.removeNote(argv.title);
     note
