@@ -1,5 +1,3 @@
-console.log('Starting notes.js');
-
 const fs = require('fs');
 
 const fetchNotes = () => {
@@ -15,6 +13,7 @@ const saveNotes = notes =>
     fs.writeFileSync('notes-data.json', JSON.stringify(notes));
 
 const printNote = note => {
+    console.log('--------');
     console.log(`Note title: ${note.title}`);
     console.log(`Note body: ${note.body}`);
 };
@@ -35,7 +34,7 @@ const addNote = (title, body) => {
 };
 
 const getAll = () => {
-    console.log('Getting all notes');
+    return fetchNotes();
 };
 
 const readNote = title => {
